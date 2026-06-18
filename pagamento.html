@@ -3,176 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página de pagamento - FoodHub Delivery">
     <title>Pagamento - FoodHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ==================== CABEÇALHO ==================== -->
-    <header class="header" role="banner">
+
+    <!-- CABEÇALHO -->
+    <header>
         <div class="container">
-            <div class="header-top">
-                <a href="cardapio.html" class="back-button" aria-label="Voltar para cardápio">
-                    ← Voltar
-                </a>
-                <h1>🍽️ FoodHub</h1>
-            </div>
+            <a href="cardapio.html" class="back-link">← Voltar</a>
+            <h1>🍽️ FoodHub</h1>
         </div>
     </header>
 
-    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
-    <main id="main-content" class="main-content">
-        <div class="container payment-layout">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <div class="container">
 
-            <!-- ==================== RESUMO DO PEDIDO ==================== -->
-            <section class="payment-section" aria-label="Resumo do pedido">
+            <!-- RESUMO DO PEDIDO -->
+            <section>
                 <h2>Resumo do Pedido</h2>
-
-                <!-- Informações do restaurante -->
                 <div class="order-summary">
-                    <div class="summary-header">
-                        <h3 id="restaurant-name-payment">Nome do Restaurante</h3>
-                        <p id="restaurant-address">Endereço do restaurante</p>
+                    <h3 style="margin-bottom: 15px;">Sabor Express</h3>
+                    <p style="color: #888; margin-bottom: 20px;">Rua A, 123 - Centro</p>
+
+                    <h4 style="margin-bottom: 15px;">Itens do pedido:</h4>
+                    <div class="simple-list">
+                        <div class="list-item">
+                            <span class="list-item-name">Pizza Margherita</span>
+                            <span class="list-item-value">R$ 35,90</span>
+                        </div>
+                        <div class="list-item">
+                            <span class="list-item-name">Pizza Pepperoni</span>
+                            <span class="list-item-value">R$ 38,90</span>
+                        </div>
                     </div>
 
-                    <!-- Lista dos itens pedidos -->
-                    <div class="order-items">
-                        <h4>Itens do pedido:</h4>
-                        <ul id="order-items-list" aria-label="Lista de itens do pedido">
-                            <!-- Itens serão carregados por JavaScript -->
-                        </ul>
-                    </div>
-
-                    <!-- Cálculo do total -->
-                    <div class="order-totals" aria-label="Cálculo de preços">
-                        <div class="total-row">
+                    <div style="margin-top: 20px;">
+                        <div class="summary-row">
                             <span>Subtotal:</span>
-                            <span id="payment-subtotal">R$ 0,00</span>
+                            <span>R$ 74,80</span>
                         </div>
-                        <div class="total-row">
+                        <div class="summary-row">
                             <span>Taxa de entrega:</span>
-                            <span id="payment-delivery-fee">R$ 3,50</span>
+                            <span>R$ 3,50</span>
                         </div>
-                        <div class="total-row total">
+                        <div class="summary-row summary-total">
                             <span>Valor Total:</span>
-                            <span id="payment-total">R$ 0,00</span>
+                            <span>R$ 78,30</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- ==================== FORMA DE PAGAMENTO ==================== -->
-                <div class="payment-method">
-                    <h3>Forma de Pagamento</h3>
-                    <div class="pix-container">
-                        <p class="pix-title">💳 Pagamento via PIX</p>
-                        <p class="pix-instruction">Escaneie o código QR abaixo com seu smartphone</p>
-
-                        <!-- QR Code Ilustrativo -->
-                        <div class="qr-code-container">
-                            <svg
-                                class="qr-code"
-                                viewBox="0 0 200 200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-label="Código QR ilustrativo para pagamento PIX"
-                                role="img"
-                            >
-                                <!-- Grid QR code ilustrativo -->
-                                <rect width="200" height="200" fill="white"/>
-                                <rect x="10" y="10" width="30" height="30" fill="black"/>
-                                <rect x="40" y="10" width="10" height="10" fill="black"/>
-                                <rect x="60" y="10" width="20" height="20" fill="black"/>
-                                <rect x="80" y="10" width="15" height="15" fill="black"/>
-                                <rect x="10" y="40" width="10" height="10" fill="black"/>
-                                <rect x="30" y="40" width="10" height="10" fill="black"/>
-                                <rect x="60" y="40" width="30" height="20" fill="black"/>
-                                <rect x="40" y="60" width="20" height="10" fill="black"/>
-                                <rect x="80" y="40" width="15" height="20" fill="black"/>
-                                <rect x="10" y="80" width="30" height="30" fill="black"/>
-                                <rect x="50" y="80" width="30" height="30" fill="black"/>
-                                <rect x="90" y="20" width="50" height="50" fill="black"/>
-                                <rect x="100" y="90" width="40" height="40" fill="black"/>
-                                <rect x="160" y="10" width="30" height="30" fill="black"/>
-                                <rect x="170" y="50" width="20" height="20" fill="black"/>
-                                <rect x="160" y="160" width="30" height="30" fill="black"/>
-                                <text x="100" y="175" text-anchor="middle" font-size="11" fill="black">
-                                    QR Code PIX
-                                </text>
-                            </svg>
-                        </div>
-
-                        <!-- Informações da chave PIX -->
-                        <div class="pix-info">
-                            <p><strong>Chave PIX:</strong> contato@foodhub.com.br</p>
-                            <p><strong>Beneficiário:</strong> FoodHub Delivery Ltda</p>
-                            <p><strong>Valor:</strong> <span id="pix-amount">R$ 0,00</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botão de confirmação do pagamento -->
-                <button
-                    class="confirm-button"
-                    onclick="confirmarPagamento()"
-                    aria-label="Confirmar pagamento com PIX"
-                >
-                    Confirmar Pagamento
-                </button>
             </section>
 
-            <!-- ==================== INFORMAÇÕES DE SEGURANÇA ==================== -->
-            <aside class="security-info" aria-label="Informações de segurança e suporte">
-                <div class="info-box">
-                    <h4>🔒 Sua segurança</h4>
-                    <ul>
-                        <li>Dados criptografados</li>
-                        <li>Transação segura</li>
-                        <li>Suporte 24/7</li>
-                        <li>Garantia de entrega</li>
-                    </ul>
+            <!-- PAGAMENTO -->
+            <section>
+                <h2>Forma de Pagamento</h2>
+                <div class="qr-code-area">
+                    <h3>💳 Pagamento via PIX</h3>
+                    <p>Escaneie o código QR abaixo com seu smartphone</p>
+
+                    <!-- QR CODE ILUSTRATIVO -->
+                    <div class="qr-code">📱</div>
+
+                    <p style="font-size: 13px; color: #666;">
+                        <strong>Chave PIX:</strong> contato@foodhub.com.br<br>
+                        <strong>Beneficiário:</strong> FoodHub Delivery<br>
+                        <strong>Valor:</strong> R$ 78,30
+                    </p>
                 </div>
 
-                <div class="info-box">
-                    <h4>📱 Dúvidas?</h4>
-                    <p>Entre em contato conosco:</p>
+                <!-- BOTÃO DE CONFIRMAÇÃO -->
+                <button class="btn btn-primary" onclick="mostrarConfirmacao()">Confirmar Pagamento</button>
+            </section>
+
+            <!-- INFORMAÇÕES DE SEGURANÇA -->
+            <section>
+                <h2>Sua Segurança</h2>
+                <div class="order-summary">
+                    <p>✅ Dados criptografados</p>
+                    <p>✅ Transação segura</p>
+                    <p>✅ Suporte 24/7</p>
+                    <p>✅ Garantia de entrega</p>
+                    <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+                    <p><strong>Dúvidas?</strong></p>
                     <p>📞 (11) 99999-9999</p>
                     <p>✉️ suporte@foodhub.com</p>
                 </div>
-            </aside>
+            </section>
 
         </div>
     </main>
 
-    <!-- ==================== MODAL DE CONFIRMAÇÃO ==================== -->
-    <!-- Modal exibido após confirmação do pagamento -->
-    <div id="confirmation-modal" class="modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <div id="modal" class="modal">
         <div class="modal-content">
-            <h2 id="confirmation-title">✅ Pedido Confirmado!</h2>
-            <p id="confirmation-message">
-                PIX confirmado! Seu pedido está sendo preparado.
-            </p>
-            <p id="estimated-time" aria-label="Tempo estimado de entrega">
-                Tempo estimado de entrega: <strong>30 minutos</strong>
-            </p>
-            <p class="confirmation-order-id">
-                Número do pedido: <strong id="order-id">#12345</strong>
-            </p>
-            <div class="confirmation-actions">
-                <button
-                    class="primary-button"
-                    onclick="voltarParaInicio()"
-                    aria-label="Voltar para página inicial"
-                >
-                    Voltar para Início
-                </button>
-            </div>
+            <h2>✅ Pedido Confirmado!</h2>
+            <p>PIX confirmado! Seu pedido está sendo preparado.</p>
+            <p style="font-size: 18px; color: #FFA500; font-weight: bold;">⏱️ Tempo estimado: 30 minutos</p>
+            <p style="color: #888; margin-top: 20px;">Número do pedido: <strong>#54321</strong></p>
+            <button class="btn btn-primary" onclick="voltarHome()">Voltar para Início</button>
+            <button class="btn btn-secondary" onclick="fecharModal()">Fechar</button>
         </div>
     </div>
 
-    <!-- ==================== RODAPÉ ==================== -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 FoodHub - Projeto Acadêmico</p>
-        </div>
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2025 FoodHub - Projeto Acadêmico</p>
     </footer>
 
     <script src="script.js"></script>

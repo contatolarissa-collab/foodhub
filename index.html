@@ -3,117 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FoodHub - Aplicativo de delivery de comida. Projeto acadêmico de Interação Humano-Computador.">
     <title>FoodHub - Delivery de Comida</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Skip to main content (acessibilidade) -->
-    <a href="#main-content" class="skip-link">Pular para conteúdo principal</a>
 
-    <!-- ==================== CABEÇALHO ==================== -->
-    <header class="header" role="banner">
+    <!-- CABEÇALHO -->
+    <header>
         <div class="container">
             <h1>🍽️ FoodHub</h1>
-            <p class="tagline">Sua refeição favorita em poucos cliques</p>
+            <p>Sua refeição favorita em poucos cliques</p>
         </div>
     </header>
 
-    <!-- ==================== BUSCA ==================== -->
-    <section class="search-section" aria-label="Buscar restaurantes">
+    <!-- BUSCA -->
+    <div class="search-area">
         <div class="container">
-            <label for="busca-restaurante" class="search-label">
-                Buscar restaurante:
-            </label>
-            <div class="search-wrapper">
-                <input
-                    type="text"
-                    id="busca-restaurante"
-                    class="search-input"
-                    placeholder="Digite o nome do restaurante"
-                    aria-label="Campo de busca para restaurantes"
-                    onkeypress="if(event.key === 'Enter') buscarRestaurante()"
-                >
-                <button
-                    class="search-button"
-                    onclick="buscarRestaurante()"
-                    aria-label="Executar busca"
-                >
-                    Buscar
-                </button>
-            </div>
+            <label for="busca">Buscar restaurante:</label>
+            <input type="text" id="busca" placeholder="Digite o nome do restaurante">
+            <button onclick="alert('Busca: ' + document.getElementById('busca').value)">Buscar</button>
         </div>
-    </section>
+    </div>
 
-    <!-- ==================== CATEGORIAS ==================== -->
-    <section class="categories-section" aria-label="Categorias de comida">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
         <div class="container">
-            <h2>Categorias de comida</h2>
-            <div class="categories-grid" role="tablist" aria-label="Filtrar por categoria">
-                <button
-                    class="category-btn"
-                    onclick="filtrarPorCategoria('pizza')"
-                    role="tab"
-                    aria-label="Filtrar restaurantes de pizza"
-                >
-                    <span class="category-emoji">🍕</span>
-                    <span class="category-name">Pizza</span>
-                </button>
-                <button
-                    class="category-btn"
-                    onclick="filtrarPorCategoria('burger')"
-                    role="tab"
-                    aria-label="Filtrar restaurantes de hambúrguer"
-                >
-                    <span class="category-emoji">🍔</span>
-                    <span class="category-name">Hambúrguer</span>
-                </button>
-                <button
-                    class="category-btn"
-                    onclick="filtrarPorCategoria('asiatica')"
-                    role="tab"
-                    aria-label="Filtrar restaurantes asiáticos"
-                >
-                    <span class="category-emoji">🍜</span>
-                    <span class="category-name">Asiática</span>
-                </button>
-                <button
-                    class="category-btn"
-                    onclick="filtrarPorCategoria('saudavel')"
-                    role="tab"
-                    aria-label="Filtrar restaurantes saudáveis"
-                >
-                    <span class="category-emoji">🥗</span>
-                    <span class="category-name">Saudável</span>
-                </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- ==================== RESTAURANTES ==================== -->
-    <main id="main-content" class="main-content">
-        <section class="restaurants-section">
-            <div class="container">
-                <h2>Restaurantes disponíveis</h2>
-                <div
-                    id="lista-restaurantes"
-                    class="restaurants-grid"
-                    role="region"
-                    aria-label="Lista de restaurantes"
-                >
-                    <!-- Restaurantes serão carregados por JavaScript -->
+            <!-- CATEGORIAS -->
+            <section>
+                <h2>Categorias</h2>
+                <div class="categories">
+                    <button class="category-btn active">🍕 Pizza</button>
+                    <button class="category-btn">🍔 Hambúrguer</button>
+                    <button class="category-btn">🍜 Asiática</button>
+                    <button class="category-btn">🥗 Saudável</button>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- RESTAURANTES -->
+            <section>
+                <h2>Restaurantes Disponíveis</h2>
+                <div class="grid">
+
+                    <!-- RESTAURANTE 1 -->
+                    <div class="card">
+                        <div class="card-image">🍕</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Sabor Express</h3>
+                            <p class="card-description">Pizzas tradicionais feitas na hora</p>
+                            <p class="card-info">⭐ 4.8 | ⏱️ 30-45 min | 🚚 R$ 3,50</p>
+                            <button class="card-button" onclick="irParaCardapio()">Ver Cardápio</button>
+                        </div>
+                    </div>
+
+                    <!-- RESTAURANTE 2 -->
+                    <div class="card">
+                        <div class="card-image">🍔</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Burger House</h3>
+                            <p class="card-description">Hambúrgueres artesanais de qualidade</p>
+                            <p class="card-info">⭐ 4.6 | ⏱️ 25-35 min | 🚚 R$ 2,50</p>
+                            <button class="card-button" onclick="irParaCardapio()">Ver Cardápio</button>
+                        </div>
+                    </div>
+
+                    <!-- RESTAURANTE 3 -->
+                    <div class="card">
+                        <div class="card-image">🍜</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Sabor Asiático</h3>
+                            <p class="card-description">Pratos orientais autênticos</p>
+                            <p class="card-info">⭐ 4.7 | ⏱️ 35-50 min | 🚚 R$ 4,00</p>
+                            <button class="card-button" onclick="irParaCardapio()">Ver Cardápio</button>
+                        </div>
+                    </div>
+
+                    <!-- RESTAURANTE 4 -->
+                    <div class="card">
+                        <div class="card-image">🥗</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Verde & Saúde</h3>
+                            <p class="card-description">Refeições saudáveis e balanceadas</p>
+                            <p class="card-info">⭐ 4.9 | ⏱️ 20-30 min | 🚚 R$ 2,00</p>
+                            <button class="card-button" onclick="irParaCardapio()">Ver Cardápio</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
     </main>
 
-    <!-- ==================== RODAPÉ ==================== -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 FoodHub - Projeto Acadêmico</p>
-            <p>Disciplina: Interação Humano-Computador (IHC) e Experiência do Usuário (UX)</p>
-            <p>Desenvolvido por alunos do 1º semestre</p>
-        </div>
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2025 FoodHub - Projeto Acadêmico</p>
+        <p>Disciplina: Interação Humano-Computador (IHC)</p>
     </footer>
 
     <script src="script.js"></script>

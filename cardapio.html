@@ -3,114 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cardápio de restaurantes - FoodHub Delivery">
     <title>Cardápio - FoodHub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ==================== CABEÇALHO ==================== -->
-    <header class="header" role="banner">
+
+    <!-- CABEÇALHO -->
+    <header>
         <div class="container">
-            <div class="header-top">
-                <a href="index.html" class="back-button" aria-label="Voltar para página inicial">
-                    ← Voltar
-                </a>
-                <h1>🍽️ FoodHub</h1>
-            </div>
+            <a href="index.html" class="back-link">← Voltar</a>
+            <h1>🍽️ FoodHub</h1>
         </div>
     </header>
 
-    <!-- ==================== INFORMAÇÕES DO RESTAURANTE ==================== -->
-    <section class="restaurant-info" aria-label="Informações do restaurante">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
         <div class="container">
-            <h2 id="restaurant-name">Nome do Restaurante</h2>
-            <p id="restaurant-description">Descrição do restaurante</p>
-            <div class="restaurant-details" role="region" aria-label="Detalhes de entrega">
-                <span id="delivery-time">⏱️ 30-45 min</span>
-                <span id="delivery-fee">🚚 R$ 3,50</span>
-                <span id="rating">⭐ 4.5</span>
-            </div>
-        </div>
-    </section>
 
-    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
-    <main id="main-content" class="main-content">
-        <div class="container menu-layout">
+            <!-- INFORMAÇÕES DO RESTAURANTE -->
+            <section>
+                <h2>Sabor Express</h2>
+                <p>Pizzas tradicionais feitas na hora</p>
+                <p style="color: #888; margin-top: 10px;">
+                    ⭐ 4.8 | ⏱️ 30-45 min | 🚚 R$ 3,50
+                </p>
+            </section>
 
-            <!-- ==================== PRODUTOS ==================== -->
-            <section class="products-section" aria-label="Produtos do restaurante">
-                <h3>Nossos Produtos</h3>
-                <div
-                    id="lista-produtos"
-                    class="products-grid"
-                    role="region"
-                    aria-label="Grade de produtos disponíveis"
-                >
-                    <!-- Produtos serão carregados por JavaScript -->
+            <!-- PRODUTOS -->
+            <section>
+                <h2>Nossos Produtos</h2>
+                <div class="grid">
+
+                    <!-- PRODUTO 1 -->
+                    <div class="card">
+                        <div class="card-image">🍕</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Pizza Margherita</h3>
+                            <p class="card-description">Tomate fresco, mozzarella e manjericão</p>
+                            <p class="card-price">R$ 35,90</p>
+                            <button class="card-button" onclick="alert('Pizza Margherita adicionada ao carrinho!')">+ Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUTO 2 -->
+                    <div class="card">
+                        <div class="card-image">🍕</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Pizza Pepperoni</h3>
+                            <p class="card-description">Mozzarella e pepperoni crocante</p>
+                            <p class="card-price">R$ 38,90</p>
+                            <button class="card-button" onclick="alert('Pizza Pepperoni adicionada ao carrinho!')">+ Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUTO 3 -->
+                    <div class="card">
+                        <div class="card-image">🍕</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Pizza Vegetariana</h3>
+                            <p class="card-description">Brócolis, cenoura, pimentão e cebola</p>
+                            <p class="card-price">R$ 32,90</p>
+                            <button class="card-button" onclick="alert('Pizza Vegetariana adicionada ao carrinho!')">+ Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUTO 4 -->
+                    <div class="card">
+                        <div class="card-image">🍕</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Pizza 4 Queijos</h3>
+                            <p class="card-description">Mozzarella, cheddar, provolone e gorgonzola</p>
+                            <p class="card-price">R$ 42,90</p>
+                            <button class="card-button" onclick="alert('Pizza 4 Queijos adicionada ao carrinho!')">+ Adicionar</button>
+                        </div>
+                    </div>
+
+                    <!-- PRODUTO 5 -->
+                    <div class="card">
+                        <div class="card-image">🥤</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Refrigerante</h3>
+                            <p class="card-description">Bebida gelada 350ml</p>
+                            <p class="card-price">R$ 5,90</p>
+                            <button class="card-button" onclick="alert('Refrigerante adicionado ao carrinho!')">+ Adicionar</button>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
-            <!-- ==================== CARRINHO (SIDEBAR) ==================== -->
-            <aside class="cart-sidebar" aria-label="Resumo do carrinho de compras">
-                <div class="cart-container">
-                    <h3>Seu Carrinho</h3>
-
-                    <!-- Lista de itens do carrinho -->
-                    <div
-                        id="cart-items"
-                        class="cart-items"
-                        aria-label="Itens no carrinho"
-                        aria-live="polite"
-                    >
-                        <p class="empty-cart">Carrinho vazio</p>
+            <!-- RESUMO DO CARRINHO -->
+            <section>
+                <h2>Seu Carrinho</h2>
+                <div class="order-summary">
+                    <p style="text-align: center; color: #999;">Adicione produtos ao carrinho</p>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span>R$ 0,00</span>
                     </div>
-
-                    <!-- Resumo com cálculo do total -->
-                    <div class="cart-summary" aria-label="Cálculo do valor total">
-                        <div class="summary-row">
-                            <span>Subtotal:</span>
-                            <span id="subtotal" aria-label="Valor do subtotal">R$ 0,00</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Taxa de entrega:</span>
-                            <span id="delivery-fee-cart" aria-label="Valor da taxa de entrega">R$ 3,50</span>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total:</span>
-                            <span id="total" aria-label="Valor total do pedido">R$ 0,00</span>
-                        </div>
+                    <div class="summary-row">
+                        <span>Taxa de entrega:</span>
+                        <span>R$ 3,50</span>
                     </div>
-
-                    <!-- Botão para proceder com o pagamento -->
-                    <button
-                        class="checkout-button"
-                        id="checkout-btn"
-                        onclick="irParaPagamento()"
-                        aria-label="Proceder para página de pagamento"
-                        disabled
-                    >
-                        Prosseguir para Pagamento
-                    </button>
-
-                    <!-- Botão para limpar o carrinho -->
-                    <button
-                        class="clear-cart-button"
-                        onclick="limparCarrinho()"
-                        aria-label="Limpar todos os itens do carrinho"
-                    >
-                        Limpar Carrinho
-                    </button>
+                    <div class="summary-row summary-total">
+                        <span>Total:</span>
+                        <span>R$ 0,00</span>
+                    </div>
                 </div>
-            </aside>
+                <button class="btn btn-primary" onclick="irParaPagamento()">Prosseguir para Pagamento</button>
+                <button class="btn btn-secondary" onclick="alert('Carrinho limpo!')">Limpar Carrinho</button>
+            </section>
 
         </div>
     </main>
 
-    <!-- ==================== RODAPÉ ==================== -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 FoodHub - Projeto Acadêmico</p>
-        </div>
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2025 FoodHub - Projeto Acadêmico</p>
     </footer>
 
     <script src="script.js"></script>
